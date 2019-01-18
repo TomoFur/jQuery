@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+<input type="button" value="click" id="btn">
+<script>
+    $.holdReady(true);
+    document.getElementById('btn').onclick=function(){
+        $.holdReady(false);
+    };
+    $(function () {
+        alert('hello,world!');
+    })
+</script>
+</body>
+</html>
