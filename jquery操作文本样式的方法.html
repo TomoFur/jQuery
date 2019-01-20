@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+<button id="btn1">html</button>
+<button id="btn2">text</button>
+<button id="btn3">value</button>
+<p></p>
+<p></p>
+<input type="text">
+<script>
+    $(function () {
+        //html会解析传入字符串里面的html标签
+        document.getElementById('btn1').onclick=function(){
+            $('p').html('<span>这是一个span</span>');
+        }
+        //text不会解析传入的标签，而是将所有字符原封不动的输出。
+        document.getElementById('btn2').onclick=function(){
+            $('p').text('<span>这是一个span</span>');
+        }
+        document.getElementById('btn3').onclick=function(){
+            $('input').val('请输入内容');
+        }
+    })
+</script>
+</body>
+</html>

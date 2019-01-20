@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+        .box2{
+            border:10px dashed #0f0;
+        }
+        div{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<button id="btn">添加样式</button>
+<button id="btn1">删除样式</button>
+<script>
+    $(function () {
+        document.getElementById('btn').onclick=function(){
+            //给页面中所有div添加样式
+            $('div').addClass('box1 box2');
+        }
+        document.getElementById('btn1').onclick=function () {
+            //给页面中所有div标签删除box2样式。
+            $('div').removeClass('box2');
+        }
+
+    })
+</script>
+</body>
+</html>
