@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+    <style>
+        #inner{
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+        }
+        #outer{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner"></div>
+</div>
+<a href="http://www.baidu.com">点击</a>
+<script>
+    $(function () {
+        $('#inner').on('click',function (event) {
+            console.log('inner被点击了');
+            // return false;
+            event.stopPropagation();
+        })
+        $('#outer').on('click',function () {
+            console.log('outer被点击了');
+        })
+        $('a').click(function (event) {
+            console.log('a链接被点击了');
+            // return false;
+            event.preventDefault();
+        })
+    })
+</script>
+</body>
+</html>

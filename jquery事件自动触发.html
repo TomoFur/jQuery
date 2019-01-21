@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+    <style>
+        #outer{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+        #inner{
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner"></div>
+</div>
+<a href="http://wwww.baudu.com">点击</a>
+<script>
+    $(function () {
+       $('#inner').click(function () {
+            console.log('inner被点击了')
+        });
+        $('#outer').click(function () {
+            console.log('outer被点击了')
+        })
+        /**
+         * .trigger('click')存在有事件冒泡和默认行为
+         * .triggerHandler('click')不存在事件冒泡和默认行为
+         */
+        // $('#inner').trigger('click');
+        $('#inner').triggerHandler('click');
+    })
+</script>
+</body>
+</html>

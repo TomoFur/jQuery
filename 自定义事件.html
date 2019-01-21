@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+    $(function () {
+        $('#btn').on('myClick',function () {
+            console.log('hahahah');
+        })
+        $('#btn').trigger('myClick');
+        /*
+        自定义事件要点：
+        1.事件通过on的形式绑定
+        2.事件通过trigger的方式触发。
+         */
+
+    })
+</script>
+</body>
+</html>

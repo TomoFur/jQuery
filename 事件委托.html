@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+<ul>
+    <li>这是第1个li</li>
+    <li>这是第2个li</li>
+    <li>这是第3个li</li>
+</ul>
+<button id="btn">添加</button>
+<script>
+    $(function () {
+        $('ul').delegate('li','click',function(){
+            console.log($(this).text());
+        });
+        $('#btn').click(function () {
+            $('ul').append('<li>这是新增加的li</li>');
+        })
+    })
+</script>
+</body>
+</html>

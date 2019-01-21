@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-1.12.4.js"></script>
+</head>
+<body>
+<button id="btn">按钮</button>
+<button id="btn1">按钮</button>
+<button id="btn2">按钮</button>
+<button id="btn3">按钮</button>
+<script>
+    $(function () {
+        var test = function () {
+            console.log('hehehe');
+        };
+       $('#btn').click(function () {
+           console.log('hahah');
+       });
+        $('#btn').on('click',test);
+        $('#btn').mouseenter(function () {
+            $(this).css({
+                backgroundColor:"pink"
+            });
+        })
+        $('#btn').mouseleave(function () {
+            $(this).css({
+                backgroundColor:"skyblue"
+            });
+        });
+        //不传参，解除身上所有绑定的事件
+        $('#btn1').click(function () {
+            $('#btn').off();
+
+        })
+        //传一个参，解除这一类事件
+        $('#btn2').click(function () {
+            $('#btn').off('click');
+
+        })
+        //传两个参，解除这一类事件的某一个特指事件。
+        $('#btn3').click(function () {
+            $('#btn').off('click',test);
+        });
+    })
+</script>
+</body>
+</html>
